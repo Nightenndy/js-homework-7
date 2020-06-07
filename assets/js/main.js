@@ -57,22 +57,20 @@ console.log(checkYear(19)); // false
 console.log(checkYear('19')); // false
 console.log(checkYear(2101)); // false
 
-/*
- * #5
- *
- * checkEmail() {...}
- * С помощью метода test определите, что переданная строка является имейлом. Примеры имейлов для тестирования: mymail@mail.ru, my.mail@mail.ua, my-mail@yahoo.com, mail@gmail.com
- * Функция получает строку – имейл, возвращает true или false.
- */
+// Задание №5
 
-// console.log(checkEmail('mail@gmail.com')); // true
-// console.log(checkEmail('mail.name@mail.ua')); // true
-// console.log(checkEmail('mail-name@mail.ua')); // true
-// console.log(checkEmail('mail-name@mail.com.ua')); // true
-// console.log(checkEmail('mail@gmail')); // false
-// console.log(checkEmail('mail@gmail-com')); // false
-// console.log(checkEmail(' mail-name@mail.com.ua')); // false
-// console.log(checkEmail('mail-name@mail.com.ua ')); // false
+function checkEmail(str) {
+  return (/^[a-zA-z]+\W?[a-zA-z]+@[a-zA-z\.]+\.[a-z]{2,3}$/).test(str);
+}
+
+console.log(checkEmail('mail@gmail.com')); // true
+console.log(checkEmail('mail.name@mail.ua')); // true
+console.log(checkEmail('mail-name@mail.ua')); // true
+console.log(checkEmail('mail-name@mail.com.ua')); // true
+console.log(checkEmail('mail@gmail')); // false
+console.log(checkEmail('mail@gmail-com')); // false
+console.log(checkEmail(' mail-name@mail.com.ua')); // false
+console.log(checkEmail('mail-name@mail.com.ua ')); // false
 
 /*
  * #6
