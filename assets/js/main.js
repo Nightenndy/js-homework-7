@@ -6,17 +6,15 @@
 /* eslint-disable require-jsdoc */
 console.log('Sample JavaScript #7 HW #21');
 
-/*
- * #1
- *
- * replaceCSSComments() {...}
- * Найдите и удалите все комментарии CSS.
- * Функция получает строку, возвращает преобразованную строку, конечные пробелы должны быть удалены.
- */
+// Задание №1
 
-// console.log(replaceCSSComments('код без /*комментарий*/ комментов')); // код без комментов
-// console.log(replaceCSSComments('код бе/*коммент1*/з ком/* коммент2 */ментов')); // код без комментов
-// console.log(replaceCSSComments('код /*к1*/ без /* к2 */ коммент/*к3*/ов')); // код без комментов
+function replaceCSSComments(str) {
+  return str.replace(/\/\*.*?\*\/\s?/g, '');
+}
+
+console.log(replaceCSSComments('код без /*комментарий*/ комментов')); // код без комментов
+console.log(replaceCSSComments('код бе/*коммент1*/з ком/* коммент2 */ментов')); // код без комментов
+console.log(replaceCSSComments('код /*к1*/ без /* к2 */ коммент/*к3*/ов')); // код без комментов
 
 /*
  * #2
@@ -26,9 +24,15 @@ console.log('Sample JavaScript #7 HW #21');
  * Функция получает строку, возвращает преобразованную строку.
  */
 
-// console.log(replaceHTMLComments('<!--коммент1--> код без комментов <!--коммент2-->')); // код без комментов
-// console.log(replaceHTMLComments('<!--к1--> код <!-- к2 --><!-- к3 --> без <!-- к4 --> комментов')); // код без комментов
-// console.log(replaceHTMLComments('код <!--к1--> без <!-- к2 --> комментов')); // код без комментов
+// Задание №2
+
+function replaceHTMLComments(str) {
+  return str.replace(/\<\!\-\-*.*?\-\-\>\s*/g, '').trim();
+}
+
+console.log(replaceHTMLComments('<!--коммент1--> код без комментов <!--коммент2-->')); // код без комментов
+console.log(replaceHTMLComments('<!--к1--> код <!-- к2 --><!-- к3 --> без <!-- к4 --> комментов')); // код без комментов
+console.log(replaceHTMLComments('код <!--к1--> без <!-- к2 --> комментов')); // код без комментов
 
 /*
  * #3
