@@ -72,32 +72,27 @@ console.log(checkEmail('mail@gmail-com')); // false
 console.log(checkEmail(' mail-name@mail.com.ua')); // false
 console.log(checkEmail('mail-name@mail.com.ua ')); // false
 
-/*
- * #6
- *
- * checkDomainUrl() {...}
- * С помощью test определите, что переданная строка является доменом.
- *     Протокол может быть как http, так и https.
- *     Примеры доменов:
- *     http://site.ua, https://my-site.com, https://site.com.ua, https://subdomain.site.com.ua
- *         Функция получает строку – доменное имя, возвращает true или false.
- */
+// Задание №6
 
-// console.log(checkDomainUrl('http://external.asd1230-123.asd_internal.asd.gm-_ail.com')); // true
-// console.log(checkDomainUrl('http://domain.com')); // true
-// console.log(checkDomainUrl('https://example.domain.com')); // true
-// console.log(checkDomainUrl('https://example.domain-hyphen.com')); // true
-// console.log(checkDomainUrl('http://example.domain-hyphen.com')); // true
-// console.log(checkDomainUrl('http://www.domain.com')); // true
-// console.log(checkDomainUrl('http://www.domain.info')); // true
-// console.log(checkDomainUrl('http://www')); // false
-// console.log(checkDomainUrl('https://domain')); // false
-// console.log(checkDomainUrl(' https://domain')); // false
-// console.log(checkDomainUrl('https://domain.com ')); // false
-// console.log(checkDomainUrl('example.museum')); // false
-// console.log(checkDomainUrl('example.domain-hyphen.com')); // false
-// console.log(checkDomainUrl('www.domain.com')); // false
-// console.log(checkDomainUrl('www.example.domain-hyphen.com')); // false
+function checkDomainUrl(str) {
+  return (/^(http:|https:)\/\/(?!:\/\/)([a-zA-Z0-9-_]+\.)*[a-zA-Z0-9][a-zA-Z0-9-_]+\.[a-zA-Z]{2,5}?$/).test(str);
+}
+
+console.log(checkDomainUrl('http://external.asd1230-123.asd_internal.asd.gm-_ail.com')); // true
+console.log(checkDomainUrl('http://domain.com')); // true
+console.log(checkDomainUrl('https://example.domain.com')); // true
+console.log(checkDomainUrl('https://example.domain-hyphen.com')); // true
+console.log(checkDomainUrl('http://example.domain-hyphen.com')); // true
+console.log(checkDomainUrl('http://www.domain.com')); // true
+console.log(checkDomainUrl('http://www.domain.info')); // true
+console.log(checkDomainUrl('http://www')); // false
+console.log(checkDomainUrl('https://domain')); // false
+console.log(checkDomainUrl(' https://domain')); // false
+console.log(checkDomainUrl('https://domain.com ')); // false
+console.log(checkDomainUrl('example.museum')); // false
+console.log(checkDomainUrl('example.domain-hyphen.com')); // false
+console.log(checkDomainUrl('www.domain.com')); // false
+console.log(checkDomainUrl('www.example.domain-hyphen.com')); // false
 
 /*
  * #7
